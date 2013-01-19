@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit>
+	<testsuites>
+		<testsuite name="Tests">
+			<file>tests/FlasherTest.php</file>
+			<file>tests/SessionFlasherTest.php</file>
+		</testsuite>
+		<!-- <testsuite name="Message Tests">
+			<file>tests/Messages/ErrorTest.php</file>
+		</testsuite> -->
+	</testsuites>
+	<logging>
+		<log type="coverage-html" target="tests/coverage" charset="UTF-8"
+			yui="true" highlight="false"
+			lowUpperBound="35" highLowerBound="70" />
+	</logging>
+</phpunit>
