@@ -4,6 +4,7 @@
 		<testsuite name="Tests">
 			<file>tests/FlasherTest.php</file>
 			<file>tests/SessionFlasherTest.php</file>
+			<file>tests/Messages/ErrorTest.php</file>
 		</testsuite>
 		<!-- <testsuite name="Message Tests">
 			<file>tests/Messages/ErrorTest.php</file>

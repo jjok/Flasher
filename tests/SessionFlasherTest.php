@@ -1,27 +1,29 @@
 <?php
 
-use jjok\Flasher\SessionFlasher;
-
 require_once 'src/jjok/Flasher/Flasher.php';
 require_once 'src/jjok/Flasher/SessionFlasher.php';
-#require_once 'dummyAbstractMessage.php';
+require_once 'src/jjok/Flasher/Messages/AbstractMessage.php';
+require_once 'TestMessage.php';
 
 class SessionFlasherTest extends PHPUnit_Framework_TestCase {
 
 	/**
 	 * 
-	 * @var jjok\Flasher\Messages\AbstractMessage
+	 * @var TestMessage
 	 */
 	private $mockMessage;
 
 	public function setUp() {
-		$this->mockMessage = new jjok\Flasher\Messages\AbstractMessage();
+		$this->mockMessage = new TestMessage('test');
 	}
 
+	/**
+	 * 
+	 */
 	public function testFlasherCanBeSavedToSession() {
 
 		$session = array();
-		$queue = new SessionFlasher($session, 'abcdef');
+		$queue = new \jjok\Flasher\SessionFlasher($session, 'abcdef');
 
 		$queue->enqueue($this->mockMessage);
 		$queue->saveToSession();
@@ -31,12 +33,12 @@ class SessionFlasherTest extends PHPUnit_Framework_TestCase {
 		$this->assertInstanceOf('jjok\Flasher\Messages\AbstractMessage', unserialize($session['abcdef'][0]));
 	}
 
-	public function testFlasherIsSavedToSessionWhenDestructed() {
+	public function testFlasherIsSavedToSessionWhenDestroyed() {
 
-		$mock_message = new jjok\Flasher\Messages\AbstractMessage();
+		$mock_message = new TestMessage('test');
 		
 		$session = array();
-		$queue = new SessionFlasher($session, 'blah');
+		$queue = new \jjok\Flasher\SessionFlasher($session, 'blah');
 		
 		$queue->enqueue($mock_message);
 		
@@ -60,7 +62,10 @@ class SessionFlasherTest extends PHPUnit_Framework_TestCase {
 			'an unrelated thing' => 'test'
 		);
 
-		$queue = SessionFlasher::loadFromSession($session, 'something');
+		$queue = \jjok\Flasher\SessionFlasher::loadFromSession(
+			$session,
+			'something'
+		);
 		
 		$this->assertInstanceOf('jjok\Flasher\SessionFlasher', $queue);
 
