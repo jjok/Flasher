@@ -1,9 +1,9 @@
 Flasher
 =======
 
-A flash message queue.
-
 [![Build Status](https://travis-ci.org/jjok/Flasher.png)](https://travis-ci.org/jjok/Flasher)
+
+A flash message queue.
 
 	$message_queue = new \jjok\Flasher\Flasher();
 	$message_queue->enqueue(new \jjok\Flasher\Messages\Message('This is a message.'));

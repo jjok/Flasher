@@ -6,9 +6,6 @@
 			<file>tests/SessionFlasherTest.php</file>
 			<file>tests/Messages/ErrorTest.php</file>
 		</testsuite>
-		<!-- <testsuite name="Message Tests">
-			<file>tests/Messages/ErrorTest.php</file>
-		</testsuite> -->
 	</testsuites>
 	<logging>
 		<log type="coverage-html" target="tests/coverage" charset="UTF-8"
