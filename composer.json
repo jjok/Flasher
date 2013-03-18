@@ -1,3 +1,12 @@
 {
-	"name": "jjok/Flasher"
+	"name": "jjok/Flasher",
+	"description": "A flash message queue.",
+	"version": "0.9.0",
+	"license": "MIT",
+	"homepage": "https://github.com/jjok/Flasher",
+	"authors": [{
+		"name": "Jonathan Jefferies",
+		"homepage": "http://jjok.co.uk",
+		"role": "Developer"
+	}]
 }
