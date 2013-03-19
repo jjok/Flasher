@@ -25,9 +25,9 @@
 namespace jjok\Flasher\Messages;
 
 /**
- * 
+ * Functionality for all messages.
  * @package jjok\Flasher
- * @subpackage jjok\Flasher\Messages
+ * @subpackage Messages
  * @author Jonathan Jefferies
  * @version 0.9.0
  */

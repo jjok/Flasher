@@ -32,10 +32,10 @@ use jjok\Flasher\Messages\AbstractMessage;
  * @author Jonathan Jefferies (jjok)
  * @version 0.9.0
  */
-class Flasher extends \SplQueue {
+class Flasher extends SplQueue {
 
 	/**
-	 * (non-PHPdoc)
+	 * Queue a message.
 	 * @see SplQueue::enqueue()
 	 * @param AbstractMessage $value
 	 */
@@ -44,7 +44,7 @@ class Flasher extends \SplQueue {
 	}
 
 	/**
-	 * (non-PHPdoc)
+	 * Dequeue a message.
 	 * @see SplQueue::dequeue()
 	 * @return AbstractMessage
 	 */

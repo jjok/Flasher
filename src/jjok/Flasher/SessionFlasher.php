@@ -39,18 +39,17 @@ class SessionFlasher extends Flasher {
 	protected $session;
 
 	/**
-	 * 
+	 * The array key used to store queued messages in the session.
 	 * @var string
 	 */
 	protected $namespace;
 	
 	/**
-	 * 
+	 * Set a reference to the session and the session array key.
 	 * @param array $session A reference to the session.
 	 * @param string $namespace The array key to use when storing in the session.
 	 */
 	public function __construct(array &$session, $namespace) {
-
 		$this->session =& $session;
 		$this->namespace = $namespace;
 	}
