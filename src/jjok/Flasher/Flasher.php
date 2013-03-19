@@ -32,7 +32,7 @@ use jjok\Flasher\Messages\AbstractMessage;
  * @author Jonathan Jefferies (jjok)
  * @version 0.9.0
  */
-class Flasher extends SplQueue {
+class Flasher extends \SplQueue {
 
 	/**
 	 * Queue a message.
