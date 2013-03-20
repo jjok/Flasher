@@ -3,22 +3,28 @@
 require_once 'src/jjok/Flasher/Flasher.php';
 require_once 'src/jjok/Flasher/SessionFlasher.php';
 require_once 'src/jjok/Flasher/Messages/AbstractMessage.php';
-require_once 'TestMessage.php';
 
 class SessionFlasherTest extends PHPUnit_Framework_TestCase {
 
 	/**
-	 * 
-	 * @var TestMessage
+	 * A mock message.
+	 * @var jjok\Flasher\Messages\AbstractMessage
 	 */
 	private $mockMessage;
 
+	/**
+	 * Create a mock message.
+	 */
 	public function setUp() {
-		$this->mockMessage = new TestMessage('test');
+		$this->mockMessage = $this->getMockBuilder('jjok\Flasher\Messages\AbstractMessage')
+        						  ->disableOriginalConstructor()
+        						  ->getMock();
 	}
 
 	/**
-	 * 
+	 * @covers \jjok\Flasher\SessionFlasher::__construct
+	 * @covers \jjok\Flasher\SessionFlasher::enqueue
+	 * @covers \jjok\Flasher\SessionFlasher::saveToSession
 	 */
 	public function testFlasherCanBeSavedToSession() {
 
@@ -33,14 +39,17 @@ class SessionFlasherTest extends PHPUnit_Framework_TestCase {
 		$this->assertInstanceOf('jjok\Flasher\Messages\AbstractMessage', unserialize($session['abcdef'][0]));
 	}
 
+	/**
+	 * @covers \jjok\Flasher\SessionFlasher::__construct
+	 * @covers \jjok\Flasher\SessionFlasher::enqueue
+	 * @covers \jjok\Flasher\SessionFlasher::__destruct
+	 */
 	public function testFlasherIsSavedToSessionWhenDestroyed() {
-
-		$mock_message = new TestMessage('test');
 		
 		$session = array();
 		$queue = new \jjok\Flasher\SessionFlasher($session, 'blah');
 		
-		$queue->enqueue($mock_message);
+		$queue->enqueue($this->mockMessage);
 		
 		# Destroy the queue and save to session
 		unset($queue);
@@ -50,6 +59,10 @@ class SessionFlasherTest extends PHPUnit_Framework_TestCase {
 		$this->assertInstanceOf('jjok\Flasher\Messages\AbstractMessage', unserialize($session['blah'][0]));
 	}
 
+	/**
+	 * @covers \jjok\Flasher\SessionFlasher::loadFromSession
+	 * @covers \jjok\Flasher\SessionFlasher::__destruct
+	 */
 	public function testMessagesAreLoadedFromSession() {
 
 		$serialized_message = serialize($this->mockMessage);
