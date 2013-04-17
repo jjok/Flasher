@@ -1,6 +1,6 @@
 {
 	"name": "jjok/flasher",
-	"description": "A flash message queue.",
+	"description": "A simple flash message queue.",
 	"license": "MIT",
 	"homepage": "https://github.com/jjok/Flasher",
 	"authors": [{

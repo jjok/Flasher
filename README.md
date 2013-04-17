@@ -47,7 +47,7 @@ Use `jjok\Flasher\SessionFlasher` to automatically store queued messages in the 
 	// Add a message.
 	$message_queue->enqueue(new Message('This is a message that was stored in the session.'));
 	
-	// The page is reloaded.
+	// The page is reloaded, or redirects before messages are shown.
 	unset($message_queue);
 	
 	$message_queue = \jjok\Flasher\SessionFlasher::loadFromSession($_SESSION, 'queued_messages');
@@ -63,3 +63,6 @@ Run tests
 ---------
 
 	phpunit
+
+
+Copyright (c) 2013 Jonathan Jefferies

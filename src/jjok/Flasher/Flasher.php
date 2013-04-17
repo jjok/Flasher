@@ -27,7 +27,7 @@ namespace jjok\Flasher;
 use jjok\Flasher\Messages\AbstractMessage;
 
 /**
- * Simple message queue.
+ * A simple message queue.
  * @package jjok\Flasher
  * @author Jonathan Jefferies (jjok)
  * @version 0.9.0
