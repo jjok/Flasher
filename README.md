@@ -65,4 +65,12 @@ Run tests
 	phpunit
 
 
+TODO
+----
+
+* Might do a workaround for the E_STRICT warning "PHP Strict standards:  
+  Declaration of jjok\Flasher\Flasher::enqueue() should be compatible with
+  SplQueue::enqueue($value) in /home/travis/build/jjok/Flasher/src/jjok/Flasher/Flasher.php
+  on line 54".
+
 Copyright (c) 2013 Jonathan Jefferies
