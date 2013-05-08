@@ -28,7 +28,7 @@ namespace jjok\Flasher;
  * A message queue which is automatically saved to the session.
  * @package jjok\Flasher
  * @author Jonathan Jefferies (jjok)
- * @version 1.0.0
+ * @version 1.0.1
  */
 class SessionFlasher extends Flasher {
 

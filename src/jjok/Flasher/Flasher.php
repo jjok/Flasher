@@ -25,30 +25,29 @@
 namespace jjok\Flasher;
 
 use jjok\Flasher\Messages\AbstractMessage;
+use SplDoublyLinkedList;
 
 /**
  * A simple message queue.
  * @package jjok\Flasher
  * @author Jonathan Jefferies (jjok)
- * @version 1.0.0
+ * @version 1.0.1
  */
-class Flasher extends \SplQueue {
-
+class Flasher extends SplDoublyLinkedList {
+	
 	/**
 	 * Queue a message.
-	 * @see SplQueue::enqueue()
 	 * @param AbstractMessage $value
 	 */
 	public function enqueue(AbstractMessage $value) {
-		parent::enqueue($value);
+		$this->push($value);
 	}
 
 	/**
 	 * Dequeue a message.
-	 * @see SplQueue::dequeue()
 	 * @return AbstractMessage
 	 */
 	public function dequeue() {
-		return parent::dequeue();
+		return $this->shift();
 	}
 }

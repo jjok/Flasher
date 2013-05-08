@@ -29,6 +29,6 @@ namespace jjok\Flasher\Messages;
  * @package jjok\Flasher
  * @subpackage Messages
  * @author Jonathan Jefferies (jjok)
- * @version 1.0.0
+ * @version 1.0.1
  */
 class Error extends AbstractMessage {}

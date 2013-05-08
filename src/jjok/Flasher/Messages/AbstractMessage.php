@@ -29,7 +29,7 @@ namespace jjok\Flasher\Messages;
  * @package jjok\Flasher
  * @subpackage Messages
  * @author Jonathan Jefferies
- * @version 1.0.0
+ * @version 1.0.1
  */
 abstract class AbstractMessage {
 
