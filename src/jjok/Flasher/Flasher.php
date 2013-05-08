@@ -30,7 +30,7 @@ use jjok\Flasher\Messages\AbstractMessage;
  * A simple message queue.
  * @package jjok\Flasher
  * @author Jonathan Jefferies (jjok)
- * @version 0.9.0
+ * @version 1.0.0
  */
 class Flasher extends \SplQueue {
 
