@@ -68,6 +68,10 @@ Run tests
 Changelog
 ---------
 
+### 1.0.2
+
+`SessionFlasher` is no longer written to the session if it is empty.
+
 ### 1.0.1
 
 Rewrote main Flasher class to remove E_STRICT warning "PHP Strict standards: 

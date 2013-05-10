@@ -58,6 +58,20 @@ class SessionFlasherTest extends PHPUnit_Framework_TestCase {
 		$this->assertCount(1, $session);
 		$this->assertInstanceOf('jjok\Flasher\Messages\AbstractMessage', unserialize($session['blah'][0]));
 	}
+	
+	/**
+	 * @covers \jjok\Flasher\SessionFlasher::saveToSession
+	 */
+	public function testFlasherIsNotSavedToSessionIfEmpty() {
+		$session = array();
+		$queue = new \jjok\Flasher\SessionFlasher($session, 'blah');
+		
+		# Destroy the queue and save to session
+		unset($queue);
+		
+		$this->assertArrayNotHasKey('blah', $session);
+		$this->assertCount(0, $session);
+	}
 
 	/**
 	 * @covers \jjok\Flasher\SessionFlasher::loadFromSession

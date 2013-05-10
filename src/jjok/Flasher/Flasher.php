@@ -31,7 +31,7 @@ use SplDoublyLinkedList;
  * A simple message queue.
  * @package jjok\Flasher
  * @author Jonathan Jefferies (jjok)
- * @version 1.0.1
+ * @version 1.0.2
  */
 class Flasher extends SplDoublyLinkedList {
 	

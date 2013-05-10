@@ -28,7 +28,7 @@ namespace jjok\Flasher;
  * A message queue which is automatically saved to the session.
  * @package jjok\Flasher
  * @author Jonathan Jefferies (jjok)
- * @version 1.0.1
+ * @version 1.0.2
  */
 class SessionFlasher extends Flasher {
 
@@ -87,9 +87,12 @@ class SessionFlasher extends Flasher {
 	 * Store all queued messages in the session.
 	 */
 	public function saveToSession() {
-		$this->session[$this->namespace] = array();
-		while(!$this->isEmpty()) {
-			$this->session[$this->namespace][] = serialize($this->dequeue());
+		if(!$this->isEmpty()) {
+			$this->session[$this->namespace] = array();
+			
+			while(!$this->isEmpty()) {
+				$this->session[$this->namespace][] = serialize($this->dequeue());
+			}
 		}
 	}
 }
