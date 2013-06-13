@@ -6,10 +6,10 @@ require_once 'src/jjok/Flasher/Messages/AbstractMessage.php';
 class FlasherTest extends PHPUnit_Framework_TestCase {
 	
 	/**
-	 * @covers jjok\Flasher\Flasher::enqueue
-	 * @covers jjok\Flasher\Flasher::dequeue
+	 * @covers \jjok\Flasher\Flasher::enqueue
+	 * @covers \jjok\Flasher\Flasher::dequeue
 	 */
-	public function testQueuing() {
+	public function testMessagesCanBeQueuedAndDequeued() {
 		$mock_message = $this->getMockBuilder('jjok\Flasher\Messages\AbstractMessage')
                      ->disableOriginalConstructor()
                      ->getMock();
