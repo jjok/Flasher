@@ -1,6 +1,8 @@
 Flasher
 =======
 
+[![Latest Stable Version](https://poser.pugx.org/jjok/flasher/v/stable.png)](https://packagist.org/packages/jjok/flasher)
+
 [![Build Status](https://travis-ci.org/jjok/Flasher.png)](https://travis-ci.org/jjok/Flasher)
 
 A simple flash message queue.
