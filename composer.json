@@ -9,7 +9,7 @@
 		"role": "Developer"
 	}],
 	"autoload": {
-		"psr-0": {"jjok\Flasher": "src/"}
+		"psr-0": {"jjok\\Flasher": "src/"}
 	},
 	"require": {
 		"php": ">=5.3.0"
