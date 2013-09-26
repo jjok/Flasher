@@ -70,6 +70,10 @@ Run tests
 Changelog
 ---------
 
+### 1.0.3
+
+Added composer.json file.
+
 ### 1.0.2
 
 `SessionFlasher` is no longer written to the session if it is empty.
