@@ -26,9 +26,9 @@ Use `jjok\Flasher\Flasher` for a simple message queue.
 	
 	// "This is a message."
 	// "This is a second message."
-	
-	// OR...
-	
+
+or
+
 	// Dequeue each message. (Empties the queue)
 	while(!$message_queue->isEmpty()) {
 		echo $message_queue->dequeue();
@@ -47,7 +47,7 @@ Use `jjok\Flasher\SessionFlasher` to automatically store queued messages in the 
 	$message_queue = \jjok\Flasher\SessionFlasher::loadFromSession($_SESSION, 'queued_messages');
 	
 	// Add a message.
-	$message_queue->enqueue(new Message('This is a message that was stored in the session.'));
+	$message_queue->enqueue(new \jjok\Flasher\Messages\Message('This is a message that was stored in the session.'));
 	
 	// The page is reloaded, or redirects before messages are shown.
 	unset($message_queue);
@@ -66,6 +66,10 @@ Run tests
 
 	phpunit
 
+TODO
+----
+
+* Add MessageFactory class.
 
 Changelog
 ---------
