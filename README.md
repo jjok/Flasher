@@ -71,27 +71,5 @@ TODO
 
 * Add MessageFactory class.
 
-Changelog
----------
-
-### 1.0.3
-
-Added composer.json file.
-
-### 1.0.2
-
-`SessionFlasher` is no longer written to the session if it is empty.
-
-### 1.0.1
-
-Rewrote main Flasher class to remove E_STRICT warning "PHP Strict standards: 
-Declaration of jjok\Flasher\Flasher::enqueue() should be compatible with
-SplQueue::enqueue($value) in /home/travis/build/jjok/Flasher/src/jjok/Flasher/Flasher.php
-on line 54".
-
-### 1.0.0
-
-Initial release.
-
 
 Copyright (c) 2013 Jonathan Jefferies
