@@ -42,14 +42,16 @@ or
 
 Use `jjok\Flasher\SessionFlasher` to automatically store queued messages in the session.
 
-	use jjok\Flasher\SessionFlasher;
+	use jjok\Flasher\Factory;
 	use jjok\Flasher\Messages\Message;
 	
 	// Start the session
 	session_start();
 	
+	$factory = new Factory();
+	
 	// Get a new message queue, loading any previously queued messages from the session.
-	$message_queue = SessionFlasher::loadFromSession($_SESSION, 'queued_messages');
+	$message_queue = $factory->createSessionFlasher($_SESSION, 'queued_messages');
 	
 	// Add a message.
 	$message_queue->enqueue(new Message('This is a message that was stored in the session.'));
@@ -57,7 +59,7 @@ Use `jjok\Flasher\SessionFlasher` to automatically store queued messages in the 
 	// The page is reloaded, or redirects before messages are shown.
 	unset($message_queue);
 	
-	$message_queue = SessionFlasher::loadFromSession($_SESSION, 'queued_messages');
+	$message_queue = $factory->createSessionFlasher($_SESSION, 'queued_messages');
 	
 	// Dequeue each message
 	while(!$message_queue->isEmpty()) {
