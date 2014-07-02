@@ -71,7 +71,8 @@ Use `jjok\Flasher\SessionFlasher` to automatically store queued messages in the 
 Run tests
 ---------
 
-	phpunit
+	php -r readfile("https://phar.phpunit.de/phpunit.phar"); > phpunit.phar
+	php phpunit.phar
 
 TODO
 ----
