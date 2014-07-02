@@ -30,8 +30,7 @@ use SplDoublyLinkedList;
 /**
  * A simple message queue.
  * @package jjok\Flasher
- * @author Jonathan Jefferies (jjok)
- * @version 1.0.2
+ * @author Jonathan Jefferies
  */
 class Flasher extends SplDoublyLinkedList {
 	

@@ -28,7 +28,6 @@ namespace jjok\Flasher\Messages;
  * A generic message.
  * @package jjok\Flasher
  * @subpackage Messages
- * @author Jonathan Jefferies (jjok)
- * @version 1.0.2
+ * @author Jonathan Jefferies
  */
 class Message extends AbstractMessage {}

@@ -26,6 +26,7 @@ namespace jjok\Flasher;
 
 /**
  * Factory methods for message queues.
+ * @package jjok\Flasher
  * @author Jonathan Jefferies
  */
 class Factory {
