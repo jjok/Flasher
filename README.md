@@ -77,4 +77,4 @@ TODO
 - [ ] Add MessageFactory class.
 
 
-Copyright (c) 2013 Jonathan Jefferies
+Copyright (c) 2014 Jonathan Jefferies

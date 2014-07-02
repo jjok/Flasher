@@ -1,9 +1,19 @@
 <?php
 
-require_once 'src/jjok/Flasher/Flasher.php';
-require_once 'src/jjok/Flasher/Messages/AbstractMessage.php';
+namespace jjok\Flasher;
+
+use PHPUnit_Framework_TestCase;
 
 class FlasherTest extends PHPUnit_Framework_TestCase {
+	
+	/**
+	 * @covers \jjok\Flasher\Flasher::enqueue
+	 * @expectedException PHPUnit_Framework_Error
+	 */
+	public function testOnlyAbstractMessageCanBeQueued() {
+		$queue = new \jjok\Flasher\Flasher();
+		$queue->enqueue('A message string.');
+	}
 	
 	/**
 	 * @covers \jjok\Flasher\Flasher::enqueue
@@ -11,8 +21,8 @@ class FlasherTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function testMessagesCanBeQueuedAndDequeued() {
 		$mock_message = $this->getMockBuilder('jjok\Flasher\Messages\AbstractMessage')
-                     ->disableOriginalConstructor()
-                     ->getMock();
+			->disableOriginalConstructor()
+			->getMock();
 		
 		$queue = new \jjok\Flasher\Flasher();
 		$this->assertTrue($queue->isEmpty(), 'Queue should start empty.');

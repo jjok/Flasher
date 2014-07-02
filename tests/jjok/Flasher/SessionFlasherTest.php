@@ -1,8 +1,8 @@
 <?php
 
-require_once 'src/jjok/Flasher/Flasher.php';
-require_once 'src/jjok/Flasher/SessionFlasher.php';
-require_once 'src/jjok/Flasher/Messages/AbstractMessage.php';
+namespace jjok\Flasher;
+
+use PHPUnit_Framework_TestCase;
 
 class SessionFlasherTest extends PHPUnit_Framework_TestCase {
 
@@ -17,8 +17,8 @@ class SessionFlasherTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function setUp() {
 		$this->mockMessage = $this->getMockBuilder('jjok\Flasher\Messages\AbstractMessage')
-        						  ->disableOriginalConstructor()
-        						  ->getMock();
+								  ->disableOriginalConstructor()
+								  ->getMock();
 	}
 
 	/**

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright (c) 2013 Jonathan Jefferies
+ * Copyright (c) 2014 Jonathan Jefferies
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to
@@ -29,7 +29,6 @@ namespace jjok\Flasher\Messages;
  * @package jjok\Flasher
  * @subpackage Messages
  * @author Jonathan Jefferies
- * @version 1.0.2
  */
 abstract class AbstractMessage {
 

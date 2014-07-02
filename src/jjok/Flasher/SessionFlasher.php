@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright (c) 2013 Jonathan Jefferies
+ * Copyright (c) 2014 Jonathan Jefferies
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to
@@ -65,6 +65,7 @@ class SessionFlasher extends Flasher {
 	 * Load any stored messages from the session and requeue them.
 	 * @param array $session A reference to the session.
 	 * @param string $namespace The array key to use when storing in the session.
+	 * @deprecated Use \jjok\Flasher\Factory::createSessionFlasher()
 	 * @return \jjok\Flasher\SessionFlasher
 	 */
 	public static function loadFromSession(array &$session, $namespace) {
